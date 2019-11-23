@@ -1,36 +1,31 @@
 <?php
 
-declare('strict_type=1');
 function validaNome(string $nome) : bool
 {
-    if (empty($nome)) 
+    if(empty($nome))
     {
-        setarMensagemErro( mensagem: "O NOME não pode ser vazio");
+        setarMensagemErro('O nome não pode ser vazio, por favor preencha-o novamente');
         return false;
     }
-
-    else if (strlen($nome) < 3) 
+    else if(strlen($nome) < 3)
     {
-        setarMensagemErro( mensagem: "O NOME não pode ter menos de 3 caracteres");
+        setarMensagemErro('O nome não pode conter menos de 3 caracteres');
         return false;
     }
-    else if (strlen($nome) > 40) 
+    else if(strlen($nome) > 40)
     {
-        setarMensagemErro( mensagem: "O NOME não pode ser muito extenso");
+        setarMensagemErro('O nome não pode conter mais de 40 caracteres');
         return false;
     }
     return true;
 }
-
 function validaIdade(string $idade) : bool
 {
-    if (!is_numeric($idade)) 
+    if(!is_numeric($idade))
     {
-        setarMensagemErro( mensagem: "A IDADE tem que ser númerica");
+        setarMensagemErro('Informe um número para idade');
         return false;
     }
     return true;
 }
-
-
 
